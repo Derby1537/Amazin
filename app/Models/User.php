@@ -42,4 +42,16 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function findByUsername($username) {
+        return self::all()->filter(function($user) use ($username) {
+            return strcmp($user->name, $username);
+        });
+    }
+
+    public function findByEmail($email) {
+        return self::all()->filter(function($user) use ($email) {
+            return strcmp($user->email, $email);
+        });
+    }
 }

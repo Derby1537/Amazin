@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>Amazin</h1>
-    <button onclick="window.location.href='/products'">List of products</button>
-    <button onclick="window.location.href='/profile'">profile</button>
+    @yield('body')
 </body>
+<footer><button onclick="window.location.href='/'">home</button></footer>
 </html>

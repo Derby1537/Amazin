@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UsersController;
+use App\Http\Controllers\OrdersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +18,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/profile', [UsersController::class, 'profile']);
+Route::get('/login', [UsersController::class, 'login']);
+Route::get('/signup', [UsersController::class, 'signup']);
+Route::post('/signup', [UsersController::class, 'register']);
+
+Route::resource('/orders', OrdersController::class);
